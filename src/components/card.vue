@@ -3,7 +3,7 @@
     <div id="b1">{{settings[department].name}}</div>
     <div id="b2">
       <div>等候人数</div>
-      <div class="large animate__animated animate__flash" v-show="show">{{line.length - 1}}</div>
+      <div class="large animate__animated animate__flash" v-show="show">{{line.length >= 1? line.length-1 : 0}}</div>
     </div>
     <div id="b3">
       <div id="status">
@@ -12,14 +12,14 @@
       </div>
       <div id="member">
         <div class="small">当前成员</div>
-        <div class="large animate__animated animate__flash" v-show="show">{{line[0].stuName}}</div>
+        <div class="large animate__animated animate__flash" v-show="show" v-if="line.length > 0">{{line[0].stuName}}</div>
       </div>
     </div>
     <div id="b4">
       <div>等候列表</div>
-      <div class="large animate__animated  animate__fadeInUp" v-show="show">1. {{line[0].stuName}}</div>
-      <div class="large animate__animated  animate__fadeInUp" v-show="show">2. {{line[1].stuName}}</div>
-      <div class="large animate__animated  animate__fadeInUp" v-show="show">3. {{line[2].stuName}}</div>
+      <div class="large animate__animated  animate__fadeInUp" v-if="line.length > 1" v-show="show">1. {{line[1].stuName}}</div>
+      <div class="large animate__animated  animate__fadeInUp" v-if="line.length > 2" v-show="show">2. {{line[2].stuName}}</div>
+      <div class="large animate__animated  animate__fadeInUp" v-if="line.length > 3" v-show="show">3. {{line[3].stuName}}</div>
     </div>
   </div>
 </template>
