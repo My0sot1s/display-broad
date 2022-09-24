@@ -34,12 +34,20 @@ export default {
     const departments = ['软件部', '运维部', '美工部', '策划部', '运营部']
     this.lines = await Promise.all(departments.map( async(e) => {
       let eachLine = await line(e)
-      return eachLine.data.data
+      if(eachLine.data.data){
+        return eachLine.data.data
+      }else {
+        return []
+      }
     }))
     setInterval(async() => {
       let tempLines = await Promise.all(departments.map( async(e) => {
         let eachLine = await line(e)
-        return eachLine.data.data
+        if(eachLine.data.data){
+          return eachLine.data.data
+        }else {
+          return []
+        }
       }))
       console.log(tempLines)
       for(let i = 0; i < 5; i++){
