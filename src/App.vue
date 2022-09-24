@@ -41,8 +41,9 @@ export default {
         let eachLine = await line(e)
         return eachLine.data.data
       }))
+      console.log(tempLines)
       for(let i = 0; i < 5; i++){
-        if(tempLines[i].toString() !== this.lines[i].toString()){
+        if(JSON.stringify(tempLines[i]) !== JSON.stringify(this.lines[i])){
           this.lines[i] = [...tempLines[i]]
           this.$forceUpdate()
         }

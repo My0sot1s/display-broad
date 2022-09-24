@@ -17,9 +17,9 @@
     </div>
     <div id="b4">
       <div>等候列表</div>
-      <div class="large animate__animated  animate__fadeInUp" v-show="show">1. {{line[1].stuName}}</div>
-      <div class="large animate__animated  animate__fadeInUp" v-show="show">2. {{line[2].stuName}}</div>
-      <div class="large animate__animated  animate__fadeInUp" v-show="show">3. {{line[3].stuName}}</div>
+      <div class="large animate__animated  animate__fadeInUp" v-show="show">1. {{line[0].stuName}}</div>
+      <div class="large animate__animated  animate__fadeInUp" v-show="show">2. {{line[1].stuName}}</div>
+      <div class="large animate__animated  animate__fadeInUp" v-show="show">3. {{line[2].stuName}}</div>
     </div>
   </div>
 </template>
