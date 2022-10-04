@@ -35,7 +35,7 @@ export default {
     this.lines = await Promise.all(departments.map( async(e) => {
       let eachLine = await line(e)
       if(eachLine.data.data){
-        return eachLine.data.data
+        return eachLine.data.data.filter(e => e.state != 'finished')
       }else {
         return []
       }
@@ -44,7 +44,7 @@ export default {
       let tempLines = await Promise.all(departments.map( async(e) => {
         let eachLine = await line(e)
         if(eachLine.data.data){
-          return eachLine.data.data
+          return eachLine.data.data.filter(e => e.state != 'finished')
         }else {
           return []
         }
